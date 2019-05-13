@@ -90,10 +90,22 @@
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ship__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ship */ \"./src/ship.js\");\n/* harmony import */ var _ship__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_ship__WEBPACK_IMPORTED_MODULE_0__);\n\nvar myShip = _ship__WEBPACK_IMPORTED_MODULE_0___default()(5);\nconsole.log(myShip.getLength());\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/ship.js":
+/*!*********************!*\
+  !*** ./src/ship.js ***!
+  \*********************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("console.log(\"ready\");\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("var Ship = function Ship() {\n  var shipLength = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;\n  var _shipLength = shipLength;\n  var _shipStatus = [];\n\n  var getLength = function getLength() {\n    return _shipLength;\n  };\n\n  var createShipStatus = function createShipStatus() {\n    for (var i = 0; i < getLength(); i++) {\n      _shipStatus.push(0);\n    }\n  };\n\n  createShipStatus();\n\n  var hit = function hit(n) {\n    _shipStatus[n - 1] = 1;\n  };\n\n  var shipState = function shipState() {\n    return _shipStatus;\n  };\n\n  var isSunk = function isSunk() {\n    return _shipStatus.every(function (val) {\n      return val === 1;\n    });\n  };\n\n  return {\n    getLength: getLength,\n    shipState: shipState,\n    hit: hit,\n    isSunk: isSunk\n  };\n};\n\nmodule.exports = Ship;\n\n//# sourceURL=webpack:///./src/ship.js?");
 
 /***/ })
 
